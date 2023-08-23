@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class AppInitializer extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent parent =  FXMLLoader.load(getClass().getResource("resources/view/LoginForm.fxml"));
+        Parent parent =  FXMLLoader.load(getClass().getResource("LoginForm.fxml"));
         stage.setScene(new Scene(parent));
         stage.setTitle("LoginForm");
         stage.centerOnScreen();
