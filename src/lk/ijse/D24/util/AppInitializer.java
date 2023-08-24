@@ -7,13 +7,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class AppInitializer extends Application {
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent parent =  FXMLLoader.load(getClass().getResource("LoginForm.fxml"));
-        stage.setScene(new Scene(parent));
-        stage.setTitle("LoginForm");
-        stage.centerOnScreen();
-        stage.show();
+    public void start(Stage primaryStage) throws IOException {
+        primaryStage.setScene(new Scene (FXMLLoader.load(getClass().getResource("/resources/view/LoginForm.fxml"))));
+        primaryStage.setTitle ("LOGIN");
+        primaryStage.show();
     }
 }
