@@ -24,14 +24,28 @@ public class User {
     public User() {
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", createddatetime=" + createddatetime +
+                '}';
+    }
 
-    public User(int id, String email, String username, String password,Timestamp createddatetime) {
+    public User(int id, String email, String username, String password, Timestamp createddatetime) {
         this.id = id;
         this.email = email;
         this.username = username;
         this.password = password;
         this.createddatetime = createddatetime;
     }
+
+    public User(int id, String username, String email, String password) {
+    }
+
 
     public Timestamp getCreateddatetime() {
         return createddatetime;

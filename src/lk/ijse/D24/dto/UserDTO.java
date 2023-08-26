@@ -7,17 +7,15 @@ public class UserDTO {
     private String email;
     private String username;
     private String password;
-    private Timestamp createddatetime;
 
     public UserDTO() {
     }
 
-    public UserDTO(int id, String email, String username, String password, Timestamp createddatetime) {
+    public UserDTO(int id, String email, String username, String password) {
         this.id = id;
         this.email = email;
         this.username = username;
         this.password = password;
-        this.createddatetime = createddatetime;
     }
 
     public int getId() {
@@ -52,11 +50,7 @@ public class UserDTO {
         this.password = password;
     }
 
-    public Timestamp getCreateddatetime() {
-        return createddatetime;
-    }
 
-    public void setCreateddatetime(Timestamp createddatetime) {
-        this.createddatetime = createddatetime;
-    }
+
+
 }

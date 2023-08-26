@@ -1,4 +1,7 @@
 package lk.ijse.D24.dao;
 
-public class SuperDAO {
+import org.hibernate.Session;
+
+public interface SuperDAO {
+    void setSession(Session session);
 }
