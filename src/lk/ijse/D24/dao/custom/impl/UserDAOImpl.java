@@ -1,10 +1,6 @@
 package lk.ijse.D24.dao.custom.impl;
 
-import javafx.collections.ObservableList;
 import lk.ijse.D24.dao.custom.UserDAO;
-import lk.ijse.D24.dao.custom.UserDAO;
-import lk.ijse.D24.entity.Student;
-import lk.ijse.D24.entity.User;
 import lk.ijse.D24.entity.User;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -23,14 +19,14 @@ public class UserDAOImpl implements UserDAO {
     public List<User> loadAll() {
         String sqlQuery="FROM User ";
         Query query = session.createQuery(sqlQuery);
-        List list =query.list ();
+        List<User> list =query.list ();
         session.close();
         return list;
     }
 
     @Override
-    public String save(User user) {
-        return (String) session.save (user);
+    public int save(User user) {
+        return (int) session.save (user);
     }
 
     @Override
@@ -44,7 +40,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User getObject(String id) throws Exception {
+    public User getObject(int id) throws Exception {
         return session.get (User.class,id);
     }
 }

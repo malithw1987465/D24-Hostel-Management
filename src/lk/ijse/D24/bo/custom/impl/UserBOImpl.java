@@ -25,14 +25,14 @@ public class UserBOImpl implements UserBO {
 
         try{
             userDAO.setSession (session);
-            String id=userDAO.save (new User(
+            int id=userDAO.save (new User(
                     dto.getId(),
                     dto.getUsername(),
                     dto.getEmail(),
                     dto.getPassword ()));
             transaction.commit ();
             session.close ();
-            if (id!=null){
+            if (userDAO!=null){
                 return true;
             }
         }catch (Exception e){
@@ -42,7 +42,7 @@ public class UserBOImpl implements UserBO {
     }
 
     @Override
-    public UserDTO getUser(String id) throws Exception {
+    public UserDTO getUser(int id) throws Exception {
         session=SessionFactoryConfig.getInstance ().getSession ();
         Transaction transaction=session.beginTransaction ();
 

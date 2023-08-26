@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface CrudDAO<T> extends SuperDAO {
     List<T> loadAll();
-    String save(T t);
+    int save(T t);
     void update(T t);
     void delete(T t);
-    T getObject(String id) throws Exception;
+    T getObject(int id) throws Exception;
 }

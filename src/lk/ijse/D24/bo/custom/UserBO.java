@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserBO extends SuperBO {
     boolean saveUser(UserDTO dto);
-    UserDTO getUser(String id) throws Exception;
+    UserDTO getUser(int id) throws Exception;
     boolean updateUser(UserDTO dto);
     List<UserDTO> loadAll();
 

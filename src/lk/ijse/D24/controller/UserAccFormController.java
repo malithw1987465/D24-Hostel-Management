@@ -3,7 +3,6 @@ package lk.ijse.D24.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import lk.ijse.D24.bo.BOFactory;
@@ -24,16 +23,16 @@ public class UserAccFormController  implements Initializable {
     public PasswordField txtPassword;
     public PasswordField txtConfirmPassword;
     public TextField txtUserId;
-    private UserBO userBO = (UserBO) BOFactory.getBO (BOFactory.BOTypes.USER);
+    private UserBO userBO = (UserBO) BOFactory.getBO(BOFactory.BOTypes.USER);
     private Object SendMail;
 
     public void btnCreateOnAction(ActionEvent event) {
 
-        String password=txtPassword.getText ();
-        String rePasssword=txtConfirmPassword.getText ();
-        String username = txtUsername.getText ();
+        String password = txtPassword.getText();
+        String rePasssword = txtConfirmPassword.getText();
+        String username = txtUsername.getText();
         int userId = 0;
-        String email=txtEmail.getText ();
+        String email = txtEmail.getText();
 
         /*List <UserDTO>allRoom = userBO.loadAll ();
 
@@ -56,43 +55,38 @@ public class UserAccFormController  implements Initializable {
         }
         */
 
-        if (checkDuplidate ()){
-            if (checkValidation ()){
-                if(password.equals (rePasssword)){
-                    userBO.saveUser (new UserDTO(
-                            userId,
-                            username,
-                            password,
-                            email
-                    ));
-                    new Alert (Alert.AlertType.CONFIRMATION, "USER ACCOUNT CREATED SUCCUSS").show ();
+//        if (checkDuplidate ()){
+        if (checkValidation()) {
+            if (password.equals(rePasssword)) {
+                userBO.saveUser(new UserDTO(
+                        userId,
+                        username,
+                        password,
+                        email
+                ));
+                new Alert(Alert.AlertType.CONFIRMATION, "USER ACCOUNT CREATED SUCCUSS").show();
 //                   SendMail.outMail ("YOU ARE USER IN D24HOSTEL SYSTEM",email,"D24HOSTEL");
-                    clearFeilds ();
-                    setUserId ();
-                }else {
-                    new Alert (Alert.AlertType.ERROR, "Check your Password and Try Again").show ();
-                }
-            }
-        }else{
-            new Alert (Alert.AlertType.ERROR, "THIS USER ID ALREADY GET").show ();
-            clearFeilds ();
-        }
-
-
-
-
-    }
-
-    public boolean checkDuplidate(){
-        String userId=txtUsername.getText ();
-        List<UserDTO> allRoom = userBO.loadAll ();
-        for (UserDTO u : allRoom) {
-            if (userId.equals (u.getUsername ())){
-                return false;
+                clearFeilds();
+                setUserId();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Check your Password and Try Again").show();
             }
         }
-        return  true;
     }
+
+
+
+
+//    public boolean checkDuplidate(){
+//        String userId=txtUsername.getText ();
+//        List<UserDTO> allRoom = userBO.loadAll ();
+//        for (UserDTO u : allRoom) {
+//            if (userId.equals (u.getUsername ())){
+//                return false;
+//            }
+//        }
+//        return  true;
+//    }
 
     public void clearFeilds(){
         txtConfirmPassword.clear ();
@@ -100,28 +94,20 @@ public class UserAccFormController  implements Initializable {
         txtPassword.clear ();
         txtUsername.clear ();
     }
-    public String nextUserID() {
+    public int nextUserID() {
         Session session = SessionFactoryConfig.getInstance ().getSession ();
         Transaction transaction = session.beginTransaction ();
 
-        Query query = session.createQuery ("select username from User order by username desc");
+        Query query = session.createQuery ("select id from User order by id desc");
 
-        String nextId = "U001";
+        int nextId = 1;
 
         if (query.list ().size () == 0) {
             return nextId;
         } else {
-            String id = (String) query.list ().get (0);
+            int id = (int) query.list ().get (0);
 
-            String[] SUs = id.split ("U00");
 
-            for (String a : SUs) {
-                id = a;
-            }
-
-            int idNum = Integer.valueOf (id);
-
-            id = "U00" + (idNum + 1);
 
             transaction.commit ();
             session.close ();
@@ -131,8 +117,8 @@ public class UserAccFormController  implements Initializable {
     }
 
     public void setUserId(){
-        String userID=nextUserID ();
-        txtUsername.setText (String.valueOf(txtUsername));
+       int userID=nextUserID ();
+//        txtUsername.setText (String.valueOf(txtUsername));
     }
 
     @Override

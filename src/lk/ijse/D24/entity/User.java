@@ -12,13 +12,18 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private int id;
+
     @Column(name = "email")
     private String email;
+
     @Column(name = "username")
     private String username;
+
     @Column(name = "password")
     private String password;
+
     @CreationTimestamp
+    @Column(name = "dateTime")
     private Timestamp createddatetime;
 
     public User() {
@@ -35,25 +40,13 @@ public class User {
                 '}';
     }
 
-    public User(int id, String email, String username, String password, Timestamp createddatetime) {
+    public User(int id, String email, String username, String password) {
         this.id = id;
         this.email = email;
         this.username = username;
         this.password = password;
-        this.createddatetime = createddatetime;
     }
 
-    public User(int id, String username, String email, String password) {
-    }
-
-
-    public Timestamp getCreateddatetime() {
-        return createddatetime;
-    }
-
-    public void setCreateddatetime(Timestamp createddatetime) {
-        this.createddatetime = createddatetime;
-    }
 
     public int getId() {
         return id;
