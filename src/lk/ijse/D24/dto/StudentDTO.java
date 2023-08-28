@@ -1,38 +1,23 @@
-package lk.ijse.D24.entity;
+package lk.ijse.D24.dto;
 
-import org.hibernate.annotations.CreationTimestamp;
-
-import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Timestamp;
-import java.util.Date;
-@Entity
-@Table(name = "student")
-public class Student {
-    @Id
-    @Column(name = "student_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+public class StudentDTO {
     private int id;
-    @Column(name = "student_name")
     private String name;
-    @Column(name = "nic")
     private String nic;
-    @Column(name = "address")
     private String address;
-    @Column(name = "contact")
     private String contact;
-    @Column(name = "email")
     private String email;
-    @Column(name = "gender")
     private String gender;
-    @Column(name = "dob")
     private Date dob;
-    @CreationTimestamp
     private Timestamp createdDateTime;
 
-    public Student() {
+    public StudentDTO() {
     }
 
-    public Student(int id, String name, String nic, String address, String contact, String email, String gender, Date dob, Timestamp createdDateTime) {
+    public StudentDTO(int id, String name, String nic, String address, String contact, String email, String gender, Date dob, Timestamp createdDateTime) {
         this.id = id;
         this.name = name;
         this.nic = nic;
@@ -43,8 +28,6 @@ public class Student {
         this.dob = dob;
         this.createdDateTime = createdDateTime;
     }
-
-
 
     public int getId() {
         return id;
@@ -120,7 +103,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "StudentDTO{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", nic='" + nic + '\'' +
@@ -128,7 +111,7 @@ public class Student {
                 ", contact='" + contact + '\'' +
                 ", email='" + email + '\'' +
                 ", gender='" + gender + '\'' +
-                ", dob=" + dob +
+                ", dob='" + dob + '\'' +
                 ", createdDateTime=" + createdDateTime +
                 '}';
     }
