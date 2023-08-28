@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class MainFormController {
 
-    public AnchorPane contecxtPane;
+    public AnchorPane displayPane;
     public Button settingId;
     public Button stManageId;
     public Button dashboardId;
@@ -35,28 +35,28 @@ public class MainFormController {
     }
 
     public void onActionDashboard(ActionEvent actionEvent) throws IOException {
-        Navigation.navigate(Routes.PLANS,contecxtPane);
+        Navigation.navigate(Routes.PLANS,displayPane);
         slideButton (dashboardId);
 
     }
 
     public void onActionRervation(ActionEvent actionEvent) throws IOException {
-        Navigation.navigate(Routes.RESERVATION,contecxtPane);
+        Navigation.navigate(Routes.RESERVATION,displayPane);
         slideButton (resId);
     }
 
     public void onActionRoom(ActionEvent actionEvent) throws IOException {
-        Navigation.navigate(Routes.ROOM,contecxtPane);
+        Navigation.navigate(Routes.ROOM,displayPane);
         slideButton (roomId);
     }
 
     public void onActionStudent(ActionEvent actionEvent) throws IOException {
-        Navigation.navigate(Routes.STUDENT,contecxtPane);
+        Navigation.navigate(Routes.STUDENT,displayPane);
         slideButton (stManageId);
     }
 
     public void onActionSetting(ActionEvent actionEvent) throws IOException {
-        Navigation.navigate(Routes.SETTING,contecxtPane);
+        Navigation.navigate(Routes.SETTING,displayPane);
         slideButton (settingId);
     }
 

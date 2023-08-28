@@ -16,6 +16,10 @@ public class Navigation {
         Stage window=(Stage)Navigation.anchorPane.getScene().getWindow();
 
         switch (routes) {
+            case DASHBOARD:
+                window.setTitle("DASHBOARD");
+                iniUi("MainForm.fxml");
+                break;
             case STUDENT:
                 window.setTitle ("STUDENT");
                 iniUi("StudentManage.fxml");

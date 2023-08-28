@@ -55,7 +55,7 @@ public class LoginFormController implements Initializable {
         if (checkUserDetail ()){
 
             Stage stage= (Stage) root.getScene ().getWindow ();
-            stage.setScene(new Scene (FXMLLoader.load(getClass().getResource("/..resources/view/MainForm.fxml"))));
+            stage.setScene(new Scene (FXMLLoader.load(getClass().getResource("resources/view/MainForm.fxml"))));
 
             lk.ijse.D24.util.Notification.notification ("Login Succussfully");
         }
