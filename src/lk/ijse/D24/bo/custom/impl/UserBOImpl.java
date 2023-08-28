@@ -17,90 +17,99 @@ import java.util.Random;
 public class UserBOImpl implements UserBO {
 
     private Session session;
-    UserDAO userDAO=(UserDAO) DAOFactory.getDaoFactory ().getDAO (DAOFactory.DAOTypes.USER);
+
+    UserDAO userdao=(UserDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.USER);
+
     @Override
-    public boolean saveUser(UserDTO dto) {
-        session= SessionFactoryConfig.getInstance ().getSession ();
-        Transaction transaction=session.beginTransaction ();
+    public boolean saveUser(UserDTO dto){
+        session= SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction= session.beginTransaction();
 
         try{
-            userDAO.setSession (session);
-            int id=userDAO.save (new User(
-                    dto.getId(),
-                    dto.getUsername(),
-                    dto.getEmail(),
-                    dto.getPassword ()));
-            transaction.commit ();
-            session.close ();
-            if (userDAO!=null){
+            userdao.setSession(session);
+            int id=userdao.save(
+                    new User(dto.getId(),
+                            dto.getUserName()
+
+                            ,
+                            dto.getPassword(),
+                            dto.getEmail()
+                    )
+            );
+            transaction.commit();
+            session.close();
+            if(userdao !=null){
                 return true;
             }
+
         }catch (Exception e){
-            transaction.rollback ();
+            e.printStackTrace();
+            transaction.rollback();
         }
         return false;
     }
 
     @Override
     public UserDTO getUser(int id) throws Exception {
-        session=SessionFactoryConfig.getInstance ().getSession ();
-        Transaction transaction=session.beginTransaction ();
+        session=SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction= session.beginTransaction();
 
-        userDAO.setSession (session);
-        User u=userDAO.getObject (id);
-        session.close ();
-        return new UserDTO (
-                u.getId(),
-                u.getUsername(),
-                u.getEmail(),
-                u.getPassword()
+        userdao.setSession(session);
+        User user= userdao.getObject(id);
+        session.close();
+        return new UserDTO(
+                user.getId(),
+                user.getUserName(),
+                user.getPassword(),
+                user.getEmail()
         );
+
     }
 
     @Override
     public boolean updateUser(UserDTO dto) {
-        session=SessionFactoryConfig.getInstance ().getSession ();
-        Transaction transaction=session.beginTransaction ();
+        session=SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction= session.beginTransaction();
 
-        try {
-            userDAO.setSession (session);
-            userDAO.update (new User (
+        try{
+            userdao.setSession(session);
+            userdao.update(new User(
                     dto.getId(),
-                    dto.getUsername(),
-                    dto.getEmail(),
-                    dto.getPassword()
+                    dto.getUserName(),
+                    dto.getPassword(),
+                    dto.getEmail()
             ));
 
-            transaction.commit ();
-            session.close ();
-            return true;
+            transaction.commit();
+            session.close();
         }catch (Exception e){
-            transaction.rollback ();;
+            e.printStackTrace();
+            transaction.rollback();
         }
         return false;
     }
 
     @Override
     public List<UserDTO> loadAll() {
-        session=SessionFactoryConfig.getInstance ().getSession ();
-        Transaction transaction=session.beginTransaction ();
+        session=SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction= session.beginTransaction();
 
-        userDAO.setSession (session);
-        List<User>list= userDAO.loadAll ();
-        List<UserDTO>userList= new ArrayList<> ();
+        userdao.setSession(session);
+        List<User> users=userdao.loadAll();
+        List<UserDTO> userDTOList=new ArrayList<>();
 
-        for (User u:list) {
-            userList.add(
-                    new UserDTO (
+        for(User u:users){
+            userDTOList.add(
+                    new UserDTO(
                             u.getId(),
-                            u.getUsername(),
-                            u.getEmail(),
-                            u.getPassword ()
-                    ));
+                            u.getUserName(),
+                            u.getPassword(),
+                            u.getEmail()
+                    )
+            );
         }
-
-        return userList;
-
+        return userDTOList;
     }
+
 }
 

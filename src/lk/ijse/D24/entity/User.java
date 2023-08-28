@@ -13,40 +13,29 @@ public class User {
     @Column(name = "user_id")
     private int id;
 
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "username")
-    private String username;
+    @Column(name = "userName")
+    private String userName;
 
     @Column(name = "password")
     private String password;
 
+    @Column(name = "email")
+    private String email;
+
     @CreationTimestamp
-    @Column(name = "dateTime")
-    private Timestamp createddatetime;
+    @Column(name = "logged_date")
+    private Timestamp loggedDateTime;
 
     public User() {
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", createddatetime=" + createddatetime +
-                '}';
-    }
-
-    public User(int id, String email, String username, String password) {
+    public User(int id, String userName, String password, String email) {
         this.id = id;
-        this.email = email;
-        this.username = username;
+        this.userName = userName;
         this.password = password;
-    }
+        this.email = email;
 
+    }
 
     public int getId() {
         return id;
@@ -54,6 +43,22 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -64,19 +69,16 @@ public class User {
         this.email = email;
     }
 
-    public String getUsername() {
-        return username;
-    }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    @Override
+    public String toString() {
+        return "user{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", loggedDateTime=" + loggedDateTime +
+                '}';
     }
 }

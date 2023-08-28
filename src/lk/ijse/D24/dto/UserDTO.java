@@ -3,27 +3,20 @@ package lk.ijse.D24.dto;
 import java.sql.Timestamp;
 
 public class UserDTO {
+
     private int id;
-    private String email;
-    private String username;
+    private String userName;
     private String password;
+    private String email;
 
     public UserDTO() {
     }
 
-    public UserDTO(int id, String email, String username, String password) {
+    public UserDTO(int id, String userName, String password,String email) {
         this.id = id;
-        this.email = email;
-        this.username = username;
+        this.userName = userName;
         this.password = password;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.email=email;
     }
 
     public String getEmail() {
@@ -34,12 +27,20 @@ public class UserDTO {
         this.email = email;
     }
 
-    public String getUsername() {
-        return username;
+    public int getId() {
+        return id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -49,8 +50,6 @@ public class UserDTO {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 
 
 }

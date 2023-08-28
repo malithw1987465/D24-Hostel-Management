@@ -16,9 +16,9 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public List<Student> loadAll() {
-        String sqlQuery="FROM Student ";
-        Query query = session.createQuery(sqlQuery);
-        List list =query.list ();
+        String hql="FROM Student";
+        Query query = session.createQuery(hql);
+        List<Student> list =query.list ();
         session.close();
         return list;
     }

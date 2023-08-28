@@ -9,16 +9,17 @@ import java.util.List;
 
 public class UserDAOImpl implements UserDAO {
 
+
     private Session session;
-    @Override
-    public void setSession(Session session) {
-        this.session = session;
-    }
 
     @Override
+    public void setSession(Session session) {
+        this.session=session;
+    }
+    @Override
     public List<User> loadAll() {
-        String sqlQuery="FROM User ";
-        Query query = session.createQuery(sqlQuery);
+        String hql="FROM User";
+        Query query = session.createQuery(hql);
         List<User> list =query.list ();
         session.close();
         return list;

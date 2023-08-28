@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -30,34 +31,30 @@ public class LoginFormController implements Initializable {
 
     private UserBO userBO = (UserBO) BOFactory.getBO (BOFactory.BOTypes.USER);
 
-
-    public void txtPasswordOnAction(ActionEvent event) {
-        
-    }
-
-    public void txtUsernameOnAction(ActionEvent event) {
-    }
     public boolean checkUserDetail(){
-        String userName = username.getText ();
-        String pass=txtpassword.getText ();
+        String userName=username.getText();
+        String password=txtpassword.getText();
 
-        List<UserDTO> userList = userBO.loadAll ();
+        List<UserDTO> userDTOList= userBO.loadAll();
 
-        for (UserDTO dto : userList) {
-            if(dto.getUsername ().equals (userName) && dto.getPassword ().equals (pass)){
+        for(UserDTO dto:userDTOList){
+            if(dto.getUserName().equals(userName) && dto.getPassword().equals(password)){
+
                 return true;
+
+            }else{
+                System.out.println("uncompleted");
             }
         }
         return false;
     }
 
     public void btnSignInOnAction(ActionEvent event) throws IOException {
-        if (checkUserDetail ()){
+        if(checkUserDetail()){
+            Stage stage=(Stage) root.getScene().getWindow();
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/MainForm.fxml"))));
 
-            Stage stage= (Stage) root.getScene ().getWindow ();
-            stage.setScene(new Scene (FXMLLoader.load(getClass().getResource("/..resources/view/MainForm.fxml"))));
-
-            lk.ijse.D24.util.Notification.notification ("Login Succussfully");
+            new Alert(Alert.AlertType.CONFIRMATION, "Login Successfully").show();
         }
     }
 
