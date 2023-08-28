@@ -147,7 +147,7 @@ public class StudentBOImpl implements StudentBO {
     }
 
     @Override
-    public int getStudnetCount() {
+    public int getStudentCount() {
         return 0;
     }
 }

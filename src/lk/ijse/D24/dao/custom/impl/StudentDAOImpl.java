@@ -24,8 +24,8 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public String save(Student student) {
-        return (String) session.save (student);
+    public int save(Student student) {
+        return (int) session.save (student);
     }
 
     @Override
@@ -38,20 +38,24 @@ public class StudentDAOImpl implements StudentDAO {
         session.delete (student);
     }
 
-
-
     @Override
-    public Student getObject(String id) throws Exception {
-        return session.get(Student.class,id);
+    public Student getObject(int id) throws Exception {
+        return session.get (Student.class,id);
     }
-
-    @Override
-    public List<String> getStIds() {
-        String hql = "SELECT id from Student ";
-        Query<String> query=session.createQuery (hql);
-        List<String> results = query.list();
-        session.close();
-        return results;
-
-    }
+//
+//
+//    @Override
+//    public Student getObject(String id) throws Exception {
+//        return session.get(Student.class,id);
+//    }
+//
+//    @Override
+//    public List<String> getStIds() {
+//        String hql = "SELECT id from Student ";
+//        Query<String> query=session.createQuery (hql);
+//        List<String> results = query.list();
+//        session.close();
+//        return results;
+//
+//    }
 }
