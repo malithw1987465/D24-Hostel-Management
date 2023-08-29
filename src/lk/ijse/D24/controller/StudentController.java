@@ -4,10 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -19,22 +17,15 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import java.awt.*;
 import java.net.URL;
+import java.sql.Date;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class StudentController implements Initializable {
     public AnchorPane studentPane;
-    public TextField txtStudentId;
-    public TextField txtStName;
-    public TextField txtStAdress;
-    public TextField txtStContact;
-    public Date txtStDate;
-    public TextField txtStNic;
-    public TextField txtStEmail;
+
     public ComboBox cmbStGender;
     public TableColumn colStGender;
     public TableColumn colStDob;
@@ -45,6 +36,13 @@ public class StudentController implements Initializable {
     public TableView tblStudent;
     public TableColumn colStEmail;
     public TableColumn colStNic;
+    public DatePicker date;
+    public TextField txtStContact;
+    public TextField txtStAdress;
+    public TextField txtStName;
+    public TextField txtStudentId;
+    public TextField txtStNic;
+    public TextField txtStEmail;
 
     private Session session;
     private StudentBO studentBO = (StudentBO) BOFactory.getBO (BOFactory.BOTypes.STUDENT);
@@ -84,7 +82,7 @@ public class StudentController implements Initializable {
         Session session = SessionFactoryConfig.getInstance ().getSession ();
         Transaction transaction = session.beginTransaction ();
 
-        Query query = session.createQuery ("select stId from Student order by stId desc");
+        Query query = session.createQuery ("select id from Student order by id desc");
 
         String nextId = "S001";
 
@@ -114,24 +112,30 @@ public class StudentController implements Initializable {
         txtStudentId.setText (stID);
     }
 
-    public boolean checkDuplicate() {
-        List<StudentDTO> allStudents = studentBO.loadAll ();
-        for (StudentDTO s : allStudents) {
-            if (s.getId ().equals (txtStudentId.getText ())) {
-                new Alert (Alert.AlertType.ERROR, "This ID Already Have").show ();
-                return false;
-            }
-        }
-        return true;
-    }
+//    public boolean checkDuplicate() {
+//        List<StudentDTO> allStudents = studentBO.loadAll ();
+//        for (StudentDTO s : allStudents) {
+//            if (s.getId ().equals (txtStudentId.getText ())) {
+//                new Alert (Alert.AlertType.ERROR, "This ID Already Have").show ();
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 
 
     public void onActionSave(ActionEvent event) {
-        String dob = String.valueOf (txtStDate.getValue ());
+        int id= Integer.parseInt(txtStudentId.getText());
+        String name=txtStName.getText();
+        String address=txtStAdress.getText();
+        String contact=txtStContact.getText();
+        String nic=txtStNic.getText();
+        String email=txtStEmail.getText();
+        Date dob = Date.valueOf(date.getValue());
         String gender = cmbStGender.getValue ().toString ();
-        StudentDTO studentDTO = new StudentDTO (txtStudentId.getText (), txtStName.getText (), txtStAdress.getText (), txtStContact.getText (), dob, gender,txtStEmail.getText(),txtStNic.getText());
+        StudentDTO studentDTO = new StudentDTO (id,name,nic,address,contact,email,gender,dob);
 
-        if(checkDuplicate ()){
+//        if(checkDuplicate ()){
             boolean isCheckValidate=checkValidation ();
             if(isCheckValidate){
                 studentBO.saveStudent (studentDTO);
@@ -141,8 +145,8 @@ public class StudentController implements Initializable {
                 loadAllStudent ();
                 setStID ();
             }
-
-        }
+//
+//        }
     }
     private boolean checkValidation(){
         String nameText = txtStName.getText();
@@ -168,14 +172,14 @@ public class StudentController implements Initializable {
         txtStName.clear ();
         txtStAdress.clear ();
         txtStContact.clear ();
-        txtStDate.setValue (null);
+        date.setValue (null);
         cmbStGender.setValue (null);
         txtStEmail.clear();
         txtStNic.clear();
     }
 
     public void onActionUpdate(ActionEvent event) {
-        String dob = String.valueOf (txtStDate.getValue ());
+        Date dob = Date.valueOf(date.getValue ());
         String gender = cmbStGender.getValue ().toString ();
         StudentDTO studentDTO = new StudentDTO (txtStudentId.getText (), txtStName.getText (), txtStAdress.getText (), txtStContact.getText (), dob, gender,txtStEmail.getText(),txtStNic.getText());
 
@@ -193,7 +197,7 @@ public class StudentController implements Initializable {
     }
 
     public void onActionDelete(ActionEvent event) {
-        String dob = String.valueOf (txtStDate.getValue ());
+        String dob = String.valueOf (date.getValue ());
         String gender = cmbStGender.getValue ().toString ();
         StudentDTO studentDTO = new StudentDTO (txtStudentId.getText (), txtStName.getText (), txtStAdress.getText (), txtStContact.getText (), dob, gender,txtStEmail.getText(),txtStNic.getText());
 
@@ -210,22 +214,22 @@ public class StudentController implements Initializable {
         }
     }
 
-    public void OnActionMouseClicked(MouseEvent mouseEvent) {
-        int index = tblStudent.getSelectionModel ().getSelectedIndex ();
-        String stId = colStId.getCellData (index).toString ();//select Column value
-
-        try {
-            StudentDTO dto = studentBO.getStudent (stId);
-            txtStudentId.setText (dto.getId ());
-            txtStName.setText (dto.getName ());
-            txtStAdress.setText (dto.getAddress ());
-            txtStContact.setText (dto.getContact ());
-            txtStDate.setValue (dto.getDob());
-            cmbStGender.setValue (dto.getGender ());
-            txtStEmail.setText(dto.getEmail());
-            txtStNic.setText(dto.getNic());
-        } catch (Exception e) {
-            System.out.println (e);
-        }
-    }
+//    public void OnActionMouseClicked(MouseEvent mouseEvent) {
+//        int index = tblStudent.getSelectionModel ().getSelectedIndex ();
+//        int stId = (int) colStId.getCellData (index);//select Column value
+//
+//        try {
+//            StudentDTO dto = studentBO.getStudent (stId);
+//            txtStudentId.setText (dto.getId());
+//            txtStName.setText (dto.getName ());
+//            txtStAdress.setText (dto.getAddress ());
+//            txtStContact.setText (dto.getContact ());
+//            date.setValue (dto.getDob());
+//            cmbStGender.setValue (dto.getGender ());
+//            txtStEmail.setText(dto.getEmail());
+//            txtStNic.setText(dto.getNic());
+//        } catch (Exception e) {
+//            System.out.println (e);
+//        }
+//    }
 }

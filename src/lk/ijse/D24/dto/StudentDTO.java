@@ -17,7 +17,7 @@ public class StudentDTO {
     public StudentDTO() {
     }
 
-    public StudentDTO(int id, String name, String nic, String address, String contact, String email, String gender, Date dob, Timestamp createdDateTime) {
+    public StudentDTO(int id, String name, String nic, String address, String contact, String email, String gender, Date dob) {
         this.id = id;
         this.name = name;
         this.nic = nic;
@@ -26,12 +26,11 @@ public class StudentDTO {
         this.email = email;
         this.gender = gender;
         this.dob = dob;
-        this.createdDateTime = createdDateTime;
     }
 
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -95,13 +94,6 @@ public class StudentDTO {
         this.dob = dob;
     }
 
-    public Timestamp getCreatedDateTime() {
-        return createdDateTime;
-    }
-
-    public void setCreatedDateTime(Timestamp createdDateTime) {
-        this.createdDateTime = createdDateTime;
-    }
 
     @Override
     public String toString() {

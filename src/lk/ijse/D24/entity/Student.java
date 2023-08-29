@@ -32,7 +32,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(int id, String name, String nic, String address, String contact, String email, String gender, Date dob, Timestamp createdDateTime) {
+    public Student(int id, String name, String nic, String address, String contact, String email, String gender, Date dob) {
         this.id = id;
         this.name = name;
         this.nic = nic;
@@ -41,7 +41,6 @@ public class Student {
         this.email = email;
         this.gender = gender;
         this.dob = dob;
-        this.createdDateTime = createdDateTime;
     }
 
 
@@ -110,13 +109,6 @@ public class Student {
         this.dob = dob;
     }
 
-    public Timestamp getCreatedDateTime() {
-        return createdDateTime;
-    }
-
-    public void setCreatedDateTime(Timestamp createdDateTime) {
-        this.createdDateTime = createdDateTime;
-    }
 
     @Override
     public String toString() {

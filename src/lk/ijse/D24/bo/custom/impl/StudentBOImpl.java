@@ -34,8 +34,7 @@ public class StudentBOImpl implements StudentBO {
                             student.getContact(),
                             student.getEmail(),
                             student.getGender(),
-                            (Date) student.getDob(),
-                            student.getCreatedDateTime()
+                            (Date) student.getDob()
                     )
             );
         }
@@ -58,8 +57,8 @@ public class StudentBOImpl implements StudentBO {
                     dto.getContact(),
                     dto.getEmail(),
                     dto.getGender(),
-                    dto.getDob(),
-                    dto.getCreatedDateTime() ));
+                    dto.getDob()
+                    ));
             transaction.commit ();
             session.close ();
             if (studentDAO!=null){
@@ -86,8 +85,7 @@ public class StudentBOImpl implements StudentBO {
                     dto.getContact(),
                     dto.getEmail(),
                     dto.getGender(),
-                    dto.getDob(),
-                    dto.getCreatedDateTime() ));
+                    dto.getDob() ));
 
             transaction.commit ();
             session.close ();
@@ -113,8 +111,7 @@ public class StudentBOImpl implements StudentBO {
                     dto.getContact(),
                     dto.getEmail(),
                     dto.getGender(),
-                    dto.getDob(),
-                    dto.getCreatedDateTime()
+                    dto.getDob()
             ));
             transaction.commit ();
             session.close ();
@@ -126,7 +123,7 @@ public class StudentBOImpl implements StudentBO {
     }
 
     @Override
-    public StudentDTO getStudent(String id) throws Exception {
+    public StudentDTO getStudent(int id) throws Exception {
         session= SessionFactoryConfig.getInstance ().getSession ();
         Transaction transaction=session.beginTransaction ();
 
@@ -141,8 +138,7 @@ public class StudentBOImpl implements StudentBO {
                 st.getContact(),
                 st.getEmail(),
                 st.getGender(),
-                (Date) st.getDob(),
-                st.getCreatedDateTime()
+                (Date) st.getDob()
         );
     }
 

@@ -10,7 +10,7 @@ public interface StudentBO extends SuperBO {
     boolean saveStudent(StudentDTO studentDTO);
     boolean updateStudent(StudentDTO studentDTO);
     boolean deleteStudent(StudentDTO studentDTO);
-    StudentDTO getStudent(String id) throws Exception;
+    StudentDTO getStudent(int id) throws Exception;
 
     int getStudentCount();
 }
