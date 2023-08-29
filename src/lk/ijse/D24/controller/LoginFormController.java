@@ -1,14 +1,11 @@
 package lk.ijse.D24.controller;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -16,7 +13,6 @@ import javafx.stage.Stage;
 import lk.ijse.D24.bo.BOFactory;
 import lk.ijse.D24.bo.custom.UserBO;
 import lk.ijse.D24.dto.UserDTO;
-import lk.ijse.D24.util.Notification;
 
 import java.io.IOException;
 import java.net.URL;

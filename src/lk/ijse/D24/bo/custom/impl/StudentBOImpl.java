@@ -126,7 +126,7 @@ public class StudentBOImpl implements StudentBO {
     }
 
     @Override
-    public StudentDTO getStudent(int id) throws Exception {
+    public StudentDTO getStudent(String id) throws Exception {
         session= SessionFactoryConfig.getInstance ().getSession ();
         Transaction transaction=session.beginTransaction ();
 
