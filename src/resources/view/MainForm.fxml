@@ -17,27 +17,27 @@
       <AnchorPane layoutX="14.0" layoutY="8.0" prefHeight="647.0" prefWidth="242.0" style="-fx-background-color: #8e44ad; -fx-background-radius: 30;">
          <children>
             <Button layoutX="99.0" layoutY="575.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="115.0" style="-fx-border-radius: 20; -fx-background-color: #f1c40f;" text="Log Out" />
-            <Button fx:id="roomId" layoutX="87.0" layoutY="187.0" mnemonicParsing="false" onAction="#onActionRoom" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0c2461; -fx-background-radius: 20;" text="Rooms" textFill="WHITE">
+            <Button fx:id="btnroomId" layoutX="87.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnOnActionRoom" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0c2461; -fx-background-radius: 20;" text="Rooms" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="plansId" layoutX="88.0" layoutY="320.0" mnemonicParsing="false" onAction="#onActionPlans" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0c2461; -fx-background-radius: 20;" text="Plans" textFill="WHITE">
+            <Button fx:id="btnplansId" layoutX="88.0" layoutY="320.0" mnemonicParsing="false" onAction="#btnOnActionPlans" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0c2461; -fx-background-radius: 20;" text="Plans" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="stManageId" layoutX="88.0" layoutY="254.0" mnemonicParsing="false" onAction="#onActionStudent" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0c2461; -fx-background-radius: 20;" text="Students" textFill="WHITE">
+            <Button fx:id="btnStId" layoutX="88.0" layoutY="254.0" mnemonicParsing="false" onAction="#btnActionStudent" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0c2461; -fx-background-radius: 20;" text="Students" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="resId" layoutX="87.0" layoutY="388.0" mnemonicParsing="false" onAction="#onActionRervation" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0c2461; -fx-background-radius: 20;" text="Reservations" textFill="WHITE">
+            <Button fx:id="BtnresId" layoutX="87.0" layoutY="388.0" mnemonicParsing="false" onAction="#BtnonActionReservation" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0c2461; -fx-background-radius: 20;" text="Reservations" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="settingId" layoutX="88.0" layoutY="457.0" mnemonicParsing="false" onAction="#onActionSetting" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0c2461; -fx-background-radius: 20;" text="Settings" textFill="WHITE">
+            <Button fx:id="btnsettingId" layoutX="88.0" layoutY="457.0" mnemonicParsing="false" onAction="#btnOnActionSetting" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0c2461; -fx-background-radius: 20;" text="Settings" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>

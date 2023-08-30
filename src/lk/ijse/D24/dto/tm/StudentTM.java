@@ -1,56 +1,31 @@
-package lk.ijse.D24.entity;
+package lk.ijse.D24.dto.tm;
 
-import org.hibernate.annotations.CreationTimestamp;
-
-import javax.persistence.*;
-import java.sql.Blob;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-@Entity
-@Table(name = "student")
-public class Student {
+public class StudentTM {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "student_id")
     private int id;
-
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "nic")
     private String nic;
-
-    @Column(name = "address")
     private String address;
-
-    @Column(name = "contact")
     private String contact;
-
-    @Column(name = "email")
+    private Date dob;
+    private Timestamp loggedDateTime;
     private String email;
-
-    @Column(name = "gender")
     private String gender;
 
-    @Column(name = "DOB")
-    private Date dob;
-
-    @CreationTimestamp
-    @Column(name = "logged_date")
-    private Timestamp loggedDateTime;
-
-    public Student() {
+    public StudentTM() {
     }
 
-    public Student(int id, String name, String nic, String address, String contact, Date dob,String email,String gender) {
+    public StudentTM(int id, String name, String nic, String address, String contact, Date dob, Timestamp loggedDateTime,String email,String gender) {
         this.id = id;
         this.name = name;
         this.nic = nic;
         this.address = address;
         this.contact = contact;
         this.dob = dob;
+        this.loggedDateTime = loggedDateTime;
         this.email=email;
         this.gender=gender;
     }
@@ -119,18 +94,11 @@ public class Student {
         this.dob = dob;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", nic='" + nic + '\'' +
-                ", address='" + address + '\'' +
-                ", contact='" + contact + '\'' +
-                ", email='" + email + '\'' +
-                ", gender='" + gender + '\'' +
-                ", dob=" + dob +
-                ", loggedDateTime=" + loggedDateTime +
-                '}';
+    public Timestamp getLoggedDateTime() {
+        return loggedDateTime;
+    }
+
+    public void setLoggedDateTime(Timestamp loggedDateTime) {
+        this.loggedDateTime = loggedDateTime;
     }
 }

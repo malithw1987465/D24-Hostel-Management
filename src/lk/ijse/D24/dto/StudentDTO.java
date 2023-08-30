@@ -1,35 +1,47 @@
 package lk.ijse.D24.dto;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 
 public class StudentDTO {
+
     private int id;
     private String name;
     private String nic;
     private String address;
     private String contact;
+    private Date dob;
     private String email;
     private String gender;
-    private Date dob;
-    private Timestamp createdDateTime;
 
     public StudentDTO() {
     }
 
-    public StudentDTO(int id, String name, String nic, String address, String contact, String email, String gender, Date dob) {
+    public StudentDTO(int id, String name, String nic, String address, String contact, Date dob,String email,String gender) {
         this.id = id;
         this.name = name;
         this.nic = nic;
         this.address = address;
         this.contact = contact;
-        this.email = email;
-        this.gender = gender;
         this.dob = dob;
+        this.email=email;
+        this.gender=gender;
     }
 
+    public String getGender() {
+        return gender;
+    }
 
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public int getId() {
         return id;
@@ -71,43 +83,11 @@ public class StudentDTO {
         this.contact = contact;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public Date getDob() {
         return dob;
     }
 
     public void setDob(Date dob) {
         this.dob = dob;
-    }
-
-
-    @Override
-    public String toString() {
-        return "StudentDTO{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", nic='" + nic + '\'' +
-                ", address='" + address + '\'' +
-                ", contact='" + contact + '\'' +
-                ", email='" + email + '\'' +
-                ", gender='" + gender + '\'' +
-                ", dob='" + dob + '\'' +
-                ", createdDateTime=" + createdDateTime +
-                '}';
     }
 }

@@ -22,8 +22,8 @@ public class MainFormController {
     public Button dashboardId;
     public Button roomId;
     public Button resId;
-    public AnchorPane root;
-    public AnchorPane contextPane;
+    public AnchorPane anchorPane;
+
 
     public void onActionLogOut(ActionEvent actionEvent) throws IOException {
        /* FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/lk/ijse/hostel/view/LoginForm.fxml"));
@@ -37,27 +37,29 @@ public class MainFormController {
 
 
 
-    public void onActionRervation(ActionEvent actionEvent) throws IOException {
+    public void BtnonActionReservation(ActionEvent actionEvent) throws IOException {
 
     }
 
-    public void onActionRoom(ActionEvent actionEvent) throws IOException {
+    public void btnOnActionRoom(ActionEvent actionEvent) throws IOException {
 
     }
 
-    public void onActionStudent(ActionEvent actionEvent) throws IOException {
+    public void btnActionStudent(ActionEvent actionEvent) throws IOException {
         Stage stage=new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/StudentForm.fxml"))));
-        stage.setTitle("StudentForm");
+        stage.setTitle("CreateAcc");
         stage.centerOnScreen();
         stage.show();
 
     }
 
-    public void onActionSetting(ActionEvent actionEvent) throws IOException {
+    public void btnOnActionSetting(ActionEvent actionEvent) throws IOException {
 
     }
 
-    public void onActionPlans(ActionEvent event) {
+    public void btnOnActionPlans(ActionEvent event) {
     }
+
+
 }

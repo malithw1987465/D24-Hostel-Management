@@ -1,5 +1,6 @@
 package lk.ijse.D24.config;
 
+import lk.ijse.D24.entity.Student;
 import lk.ijse.D24.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,6 +20,7 @@ public class SessionFactoryConfig {
 
         sessionFactory = new Configuration().configure()
                 .addAnnotatedClass(User.class)
+                .addAnnotatedClass(Student.class)
                 .buildSessionFactory();
 
     }

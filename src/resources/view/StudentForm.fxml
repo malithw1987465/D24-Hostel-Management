@@ -1,98 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="studentPane" prefHeight="832.0" prefWidth="1085.0" style="-fx-background-color: #3498db;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24.controller.StudentController">
+<AnchorPane fx:id="anchorPane" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24.controller.StudentFormController">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="316.0" text="STUDENT INFORMATION">
+      <ImageView fitHeight="656.0" fitWidth="1050.0" layoutX="-1.0" layoutY="-4.0">
+         <image>
+            <Image url="@../img/134.jpg" />
+         </image>
+      </ImageView>
+      <ScrollPane layoutX="220.0" layoutY="180.0" prefHeight="439.0" prefWidth="776.0">
+         <content>
+            <TableView fx:id="tblStudent" onMouseClicked="#onMouseClicked" prefHeight="440.0" prefWidth="850.0">
+              <columns>
+                <TableColumn fx:id="colID" prefWidth="79.0" text="Student_ID" />
+                <TableColumn fx:id="colName" prefWidth="116.0" text="Name" />
+                  <TableColumn fx:id="colNIC" prefWidth="111.0" text="NIC" />
+                  <TableColumn fx:id="colEmail" prefWidth="111.0" text="Email" />
+                  <TableColumn fx:id="colAddress" prefWidth="166.0" text="Address" />
+                  <TableColumn fx:id="colContact" prefWidth="101.0" text="Contact" />
+                  <TableColumn fx:id="colDOB" prefWidth="90.0" text="DOB" />
+                  <TableColumn fx:id="colGender" prefWidth="90.0" text="Gender" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <Button fx:id="btnSave" layoutX="41.0" layoutY="180.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #880e4f;" text="SAVE" textFill="WHITE">
          <font>
-            <Font size="26.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
-      </Label>
-      <Separator layoutX="16.0" layoutY="45.0" prefHeight="3.0" prefWidth="328.0" />
-      <Label layoutX="24.0" layoutY="82.0" prefHeight="22.0" prefWidth="55.0" text="ST ID">
+      </Button>
+      <Button fx:id="btnDelete" layoutX="41.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #880e4f;" text="DELETE" textFill="WHITE">
          <font>
-            <Font size="17.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
-      </Label>
-      <TextField fx:id="txtId" layoutX="24.0" layoutY="107.0" prefHeight="27.0" prefWidth="201.0" />
-      <Label layoutX="24.0" layoutY="148.0" prefHeight="22.0" prefWidth="120.0" text="ST NAME">
+      </Button>
+      <Button fx:id="btnUpdate" layoutX="41.0" layoutY="293.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #880e4f;" text="UPDATE" textFill="WHITE">
          <font>
-            <Font size="17.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
-      </Label>
-      <TextField fx:id="txtStName" layoutX="24.0" layoutY="174.0" prefHeight="31.0" prefWidth="201.0" />
-      <Label layoutX="344.0" layoutY="213.0" prefHeight="22.0" prefWidth="84.0" text="ADDRESS">
+      </Button>
+      <Button fx:id="btnBack" layoutX="31.0" layoutY="51.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="28.0" prefWidth="96.0" style="-fx-background-color: #880e4f;" text="Back" textFill="WHITE">
          <font>
-            <Font size="17.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
-      </Label>
-      <TextField fx:id="txtStAdress" layoutX="344.0" layoutY="241.0" prefHeight="31.0" prefWidth="234.0" />
-      <Label layoutX="24.0" layoutY="213.0" prefHeight="22.0" prefWidth="84.0" text="CONTACT">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtStContact" layoutX="24.0" layoutY="241.0" prefHeight="31.0" prefWidth="201.0" />
-      <Label layoutX="344.0" layoutY="82.0" prefHeight="22.0" prefWidth="55.0" text="DOB">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <DatePicker fx:id="date" layoutX="344.0" layoutY="107.0" prefHeight="27.0" prefWidth="234.0" />
-      <Label layoutX="344.0" layoutY="148.0" prefHeight="22.0" prefWidth="73.0" text="GENDER">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="cmbStGender" layoutX="344.0" layoutY="171.0" prefHeight="31.0" prefWidth="234.0" />
-      <JFXButton buttonType="RAISED" layoutX="561.0" layoutY="285.0" onAction="#onActionSave" prefHeight="31.0" prefWidth="109.0" style="-fx-background-color: #2c3e50;" text="SAVE" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="691.0" layoutY="285.0" onAction="#onActionUpdate" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #8e44ad;" text="UPDATE" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="811.0" layoutY="285.0" onAction="#onActionDelete" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #f39c12;" text="DELETE" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <TableView fx:id="tblStudent" layoutX="51.0" layoutY="365.0" onMouseClicked="#OnActionMouseClicked" prefHeight="433.0" prefWidth="984.0">
-         <columns>
-            <TableColumn fx:id="colStId" prefWidth="78.0" text="ST ID" />
-            <TableColumn fx:id="colStName" prefWidth="126.0" text="ST NAME" />
-            <TableColumn fx:id="colStAddress" prefWidth="134.0" text="ADDRESS" />
-            <TableColumn fx:id="colStContact" prefWidth="129.0" text="CONTACT" />
-            <TableColumn fx:id="colStDob" prefWidth="115.0" text="DOB" />
-            <TableColumn fx:id="colStGender" prefWidth="132.0" text="GENDER" />
-            <TableColumn fx:id="colStEmail" prefWidth="135.0" text="EMAIL" />
-            <TableColumn fx:id="colStNic" prefWidth="135.0" text="NIC" />
-         </columns>
-      </TableView>
-      <TextField fx:id="txtStNic" layoutX="676.0" layoutY="107.0" prefHeight="31.0" prefWidth="234.0" />
-      <Label layoutX="676.0" layoutY="82.0" prefHeight="22.0" prefWidth="55.0" text="NIC">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtStEmail" layoutX="676.0" layoutY="171.0" prefHeight="31.0" prefWidth="234.0" />
-      <Label layoutX="676.0" layoutY="148.0" prefHeight="22.0" prefWidth="55.0" text="EMAIL">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
+      </Button>
    </children>
 </AnchorPane>
