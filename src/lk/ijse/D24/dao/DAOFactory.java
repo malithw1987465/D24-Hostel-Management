@@ -1,5 +1,6 @@
 package lk.ijse.D24.dao;
 
+import lk.ijse.D24.dao.custom.impl.RoomDAOImpl;
 import lk.ijse.D24.dao.custom.impl.StudentDAOImpl;
 import lk.ijse.D24.dao.custom.impl.UserDAOImpl;
 
@@ -24,8 +25,8 @@ public class DAOFactory {
         switch (daoTypes){
           case STUDENT:
                 return new StudentDAOImpl();
-//            case ROOM:
-//                return new RoomDAOImpl ();
+            case ROOM:
+//                return new RoomDAOImpl();
 //            case RESERVATION:
 //                return new RevervationDAOImpl ();
             case USER:

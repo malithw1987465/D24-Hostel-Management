@@ -61,7 +61,7 @@ public class Student {
         this.name = name;
     }
 
-    public String getNic() {
+    public  String getNic() {
         return nic;
     }
 

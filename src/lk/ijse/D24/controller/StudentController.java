@@ -40,7 +40,7 @@ public class StudentController implements Initializable {
     public TextField txtStContact;
     public TextField txtStAdress;
     public TextField txtStName;
-    public TextField txtStudentId;
+    public TextField txtId;
     public TextField txtStNic;
     public TextField txtStEmail;
 
@@ -109,7 +109,7 @@ public class StudentController implements Initializable {
     }
     public void setStID(){
         String stID=nextStID ();
-        txtStudentId.setText (stID);
+        txtId.setText (stID);
     }
 
 //    public boolean checkDuplicate() {
@@ -125,7 +125,7 @@ public class StudentController implements Initializable {
 
 
     public void onActionSave(ActionEvent event) {
-        int id= Integer.parseInt(txtStudentId.getText());
+        int id= Integer.parseInt(txtId.getText());
         String name=txtStName.getText();
         String address=txtStAdress.getText();
         String contact=txtStContact.getText();
@@ -168,7 +168,7 @@ public class StudentController implements Initializable {
 
     }
     public void clearData() {
-        txtStudentId.clear ();
+        txtId.clear ();
         txtStName.clear ();
         txtStAdress.clear ();
         txtStContact.clear ();
@@ -181,7 +181,7 @@ public class StudentController implements Initializable {
     public void onActionUpdate(ActionEvent event) {
         Date dob = Date.valueOf(date.getValue ());
         String gender = cmbStGender.getValue ().toString ();
-        StudentDTO studentDTO = new StudentDTO (txtStudentId.getText (), txtStName.getText (), txtStAdress.getText (), txtStContact.getText (), dob, gender,txtStEmail.getText(),txtStNic.getText());
+        StudentDTO studentDTO = new StudentDTO (txtId.getText (), txtStName.getText (), txtStAdress.getText (), txtStContact.getText (), dob, gender,txtStEmail.getText(),txtStNic.getText());
 
         boolean isUpdate=studentBO.updateStudent (studentDTO);
 
@@ -199,7 +199,7 @@ public class StudentController implements Initializable {
     public void onActionDelete(ActionEvent event) {
         String dob = String.valueOf (date.getValue ());
         String gender = cmbStGender.getValue ().toString ();
-        StudentDTO studentDTO = new StudentDTO (txtStudentId.getText (), txtStName.getText (), txtStAdress.getText (), txtStContact.getText (), dob, gender,txtStEmail.getText(),txtStNic.getText());
+        StudentDTO studentDTO = new StudentDTO (txtId.getText (), txtStName.getText (), txtStAdress.getText (), txtStContact.getText (), dob, gender,txtStEmail.getText(),txtStNic.getText());
 
         boolean isDeleted=studentBO.deleteStudent (studentDTO);
 
