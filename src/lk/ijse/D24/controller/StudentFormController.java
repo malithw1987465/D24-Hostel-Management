@@ -43,10 +43,11 @@ public class StudentFormController implements Initializable {
 
     public void btnSaveOnAction(ActionEvent event) throws IOException {
         Stage stage=new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/StudentSaveForm.fxml"))));
-        stage.setTitle("STUDENT");
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/StudentSaveForm.fxml"))));
+        stage.setTitle("CreateAcc");
         stage.centerOnScreen();
         stage.show();
+
     }
 
     public void btnDeleteOnAction(ActionEvent event) throws Exception {
@@ -61,16 +62,16 @@ public class StudentFormController implements Initializable {
 
     public void btnUpdateOnAction(ActionEvent event) throws IOException {
         Stage stage=new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/StudentUpdateForm.fxml"))));
-        stage.setTitle("STUDENT");
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/StudentUpdateForm.fxml"))));
+        stage.setTitle("CreateAcc");
         stage.centerOnScreen();
         stage.show();
     }
 
     public void btnBackOnAction(ActionEvent event) throws IOException {
-        Stage stage = (Stage) anchorPane.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/DashboardForm.fxml"))));
-        stage.setTitle("DASHBOARD");
+        Stage stage=new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/MainForm.fxml"))));
+        stage.setTitle("CreateAcc");
         stage.centerOnScreen();
         stage.show();
     }

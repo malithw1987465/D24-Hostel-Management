@@ -4,17 +4,21 @@ import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import lk.ijse.D24.bo.BOFactory;
 import lk.ijse.D24.bo.custom.StudentBO;
 import lk.ijse.D24.dto.StudentDTO;
 import org.hibernate.Session;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.util.ResourceBundle;
@@ -57,7 +61,12 @@ public class StudentSaveFormController implements Initializable {
 
     }
 
-    public void btnBackOnAction(ActionEvent event) {
+    public void btnBackOnAction(ActionEvent event) throws IOException {
+        Stage stage=new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/MainForm.fxml"))));
+        stage.setTitle("CreateAcc");
+        stage.centerOnScreen();
+        stage.show();
     }
 
     @Override

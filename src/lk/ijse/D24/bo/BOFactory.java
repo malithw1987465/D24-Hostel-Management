@@ -1,6 +1,7 @@
 package lk.ijse.D24.bo;
 
 //import lk.ijse.D24.bo.custom.impl.StudentBOImpl;
+import lk.ijse.D24.bo.custom.impl.StudentBOImpl;
 import lk.ijse.D24.bo.custom.impl.UserBOImpl;
 
 public class BOFactory {
@@ -23,9 +24,9 @@ public class BOFactory {
 
         public static SuperBO getBO(BOTypes boTypes){
             switch (boTypes){
-//                case STUDENT:
-//                    return (SuperBO) new StudentBOImpl();
-                case ROOM:
+                case STUDENT:
+                    return (SuperBO) new StudentBOImpl();
+//                case ROOM:
 //                    return new RoomBOImpl ();
                 case RESERVATION:
 //                    return new RevervationBOImpl ();
