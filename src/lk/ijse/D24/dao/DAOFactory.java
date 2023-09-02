@@ -26,7 +26,7 @@ public class DAOFactory {
           case STUDENT:
                 return new StudentDAOImpl();
             case ROOM:
-//                return new RoomDAOImpl();
+                return new RoomDAOImpl();
 //            case RESERVATION:
 //                return new RevervationDAOImpl ();
             case USER:

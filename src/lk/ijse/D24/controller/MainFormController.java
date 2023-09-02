@@ -23,6 +23,8 @@ public class MainFormController {
     public Button roomId;
     public Button resId;
     public AnchorPane anchorPane;
+    public AnchorPane anchorPane2;
+
 
 
     public void onActionLogOut(ActionEvent actionEvent) throws IOException {
@@ -42,13 +44,19 @@ public class MainFormController {
     }
 
     public void btnOnActionRoom(ActionEvent actionEvent) throws IOException {
+        Stage stage=new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/RoomForm.fxml"))));
+        stage.setTitle("Student");
+        stage.centerOnScreen();
+        stage.show();
+
 
     }
 
     public void btnActionStudent(ActionEvent actionEvent) throws IOException {
         Stage stage=new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/StudentForm.fxml"))));
-        stage.setTitle("CreateAcc");
+        stage.setTitle("Student");
         stage.centerOnScreen();
         stage.show();
 

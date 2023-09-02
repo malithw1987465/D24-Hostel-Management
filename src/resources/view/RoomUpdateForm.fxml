@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24.controller.RoomUpdateFormController">
+   <children>
+      <ImageView fitHeight="561.0" fitWidth="510.0">
+         <image>
+            <Image url="@assests/minimalist-gradient-background-design-template_483537-2851.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="150.0" layoutY="14.0" prefHeight="44.0" prefWidth="194.0" text="ROOMS UPDATE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="175.0" prefHeight="27.0" prefWidth="58.0" text="Type :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="277.0" prefHeight="27.0" prefWidth="174.0" text="Key - Money :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtMoney" layoutX="79.0" layoutY="314.0" prefHeight="25.0" prefWidth="336.0" />
+      <Label layoutX="82.0" layoutY="376.0" prefHeight="27.0" prefWidth="104.0" text="Quantity :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnUpdate" layoutX="360.0" layoutY="480.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="110.0" style="-fx-background-color: #880e4f;" text="UPDATE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnBack" layoutX="236.0" layoutY="480.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="27.0" prefWidth="110.0" style="-fx-background-color: #880e4f;" text="BACK" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="cmbType" layoutX="79.0" layoutY="214.0" opacity="0.48" prefHeight="25.0" prefWidth="265.0" style="-fx-background-color: #9c27b0;" />
+      <Line endX="164.0" layoutX="179.0" layoutY="239.0" startX="-100.0" strokeWidth="0.5">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke></Line>
+      <ComboBox fx:id="cmbQuantity" layoutX="79.0" layoutY="420.0" opacity="0.48" prefHeight="25.0" prefWidth="265.0" style="-fx-background-color: #9c27b0;" />
+      <Line endX="164.0" layoutX="179.0" layoutY="445.0" startX="-100.0" stroke="WHITE" strokeWidth="0.5" />
+      <Label layoutX="77.0" layoutY="84.0" prefHeight="27.0" prefWidth="81.0" text="Room ID :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbID" layoutX="79.0" layoutY="125.0" opacity="0.48" prefHeight="25.0" prefWidth="265.0" style="-fx-background-color: #9c27b0;" />
+      <Line endX="164.0" layoutX="179.0" layoutY="150.0" startX="-100.0" stroke="WHITE" strokeWidth="0.8" />
+   </children>
+</AnchorPane>
