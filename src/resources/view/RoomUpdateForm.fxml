@@ -13,11 +13,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24.controller.RoomUpdateFormController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24.controller.RoomUpdateFormController">
    <children>
-      <ImageView fitHeight="561.0" fitWidth="510.0">
+      <ImageView fitHeight="555.0" fitWidth="510.0">
          <image>
-            <Image url="@assests/minimalist-gradient-background-design-template_483537-2851.jpg" />
+            <Image url="@../img/1035.jpg" />
          </image>
       </ImageView>
       <Label layoutX="150.0" layoutY="14.0" prefHeight="44.0" prefWidth="194.0" text="ROOMS UPDATE" textFill="WHITE">
@@ -51,7 +51,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <ComboBox fx:id="cmbType" layoutX="79.0" layoutY="214.0" opacity="0.48" prefHeight="25.0" prefWidth="265.0" style="-fx-background-color: #9c27b0;" />
+      <ComboBox fx:id="cmbType" layoutX="79.0" layoutY="214.0" opacity="0.48" prefHeight="25.0" prefWidth="265.0" style="-fx-background-color: #3498db;" />
       <Line endX="164.0" layoutX="179.0" layoutY="239.0" startX="-100.0" strokeWidth="0.5">
          <stroke>
             <LinearGradient endX="1.0" endY="1.0">
@@ -63,25 +63,25 @@
                   </Stop>
                   <Stop offset="0.006711409395973154">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </stroke></Line>
-      <ComboBox fx:id="cmbQuantity" layoutX="79.0" layoutY="420.0" opacity="0.48" prefHeight="25.0" prefWidth="265.0" style="-fx-background-color: #9c27b0;" />
+      <ComboBox fx:id="cmbQuantity" layoutX="79.0" layoutY="420.0" opacity="0.48" prefHeight="25.0" prefWidth="265.0" style="-fx-background-color: #3498db;" />
       <Line endX="164.0" layoutX="179.0" layoutY="445.0" startX="-100.0" stroke="WHITE" strokeWidth="0.5" />
       <Label layoutX="77.0" layoutY="84.0" prefHeight="27.0" prefWidth="81.0" text="Room ID :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cmbID" layoutX="79.0" layoutY="125.0" opacity="0.48" prefHeight="25.0" prefWidth="265.0" style="-fx-background-color: #9c27b0;" />
+      <ComboBox fx:id="cmbID" layoutX="79.0" layoutY="125.0" opacity="0.48" prefHeight="25.0" prefWidth="265.0" style="-fx-background-color: #3498db;" />
       <Line endX="164.0" layoutX="179.0" layoutY="150.0" startX="-100.0" stroke="WHITE" strokeWidth="0.8" />
    </children>
 </AnchorPane>

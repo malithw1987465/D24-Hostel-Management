@@ -30,6 +30,7 @@ public class RoomFormController implements Initializable {
     public TableColumn colMoney;
     public TableColumn colQuantity;
     public AnchorPane anchorPane;
+    public AnchorPane root;
 
     private RoomBO roomBO = (RoomBO) BOFactory.getBO (BOFactory.BOTypes.ROOM);
 
@@ -57,9 +58,9 @@ public class RoomFormController implements Initializable {
     }
 
     public void btnBackOnAction(ActionEvent event) throws IOException {
-        Stage stage = (Stage) anchorPane.getScene().getWindow();
+        Stage stage = (Stage) root.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/MainForm.fxml"))));
-        stage.setTitle("DASHBOARD");
+        stage.setTitle("MainForm");
         stage.centerOnScreen();
         stage.show();
     }
