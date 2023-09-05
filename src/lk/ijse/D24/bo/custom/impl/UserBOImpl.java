@@ -1,24 +1,35 @@
 package lk.ijse.D24.bo.custom.impl;
 
-
 import lk.ijse.D24.bo.custom.UserBO;
 import lk.ijse.D24.config.SessionFactoryConfig;
 import lk.ijse.D24.dao.DAOFactory;
 import lk.ijse.D24.dao.custom.UserDAO;
 import lk.ijse.D24.dto.UserDTO;
 import lk.ijse.D24.entity.User;
+import net.bytebuddy.pool.TypePool;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class UserBOImpl implements UserBO {
 
     private Session session;
 
     UserDAO userdao=(UserDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.USER);
+
+    @Override
+    public List<Integer> getUserIds() {
+        try{
+            session=SessionFactoryConfig.getInstance ().getSession ();
+            userdao.setSession (session);
+            return userdao.userIds();
+        }catch (Exception e){
+            session.close ();
+            return null;
+        }
+    }
 
     @Override
     public boolean saveUser(UserDTO dto){
@@ -29,9 +40,7 @@ public class UserBOImpl implements UserBO {
             userdao.setSession(session);
             int id=userdao.save(
                     new User(dto.getId(),
-                            dto.getUserName()
-
-                            ,
+                            dto.getUserName(),
                             dto.getPassword(),
                             dto.getEmail()
                     )
@@ -111,5 +120,5 @@ public class UserBOImpl implements UserBO {
         return userDTOList;
     }
 
-}
 
+}

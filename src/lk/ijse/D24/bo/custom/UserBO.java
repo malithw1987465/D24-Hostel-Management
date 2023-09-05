@@ -6,6 +6,7 @@ import lk.ijse.D24.dto.UserDTO;
 import java.util.List;
 
 public interface UserBO extends SuperBO {
+    List<Integer> getUserIds();
     boolean saveUser(UserDTO dto);
     UserDTO getUser(int id) throws Exception;
     boolean updateUser(UserDTO dto);

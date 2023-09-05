@@ -44,4 +44,13 @@ public class UserDAOImpl implements UserDAO {
     public User getObject(int id) throws Exception {
         return session.get (User.class,id);
     }
+
+    @Override
+    public List<Integer> userIds() {
+         String hql = "SELECT id from User ";
+        Query<Integer> query=session.createQuery (hql);
+        List<Integer> results = query.list();
+        session.close();
+        return results;
+    }
 }

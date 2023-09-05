@@ -39,7 +39,7 @@ public class RoomFormController implements Initializable {
 
     public void btnSaveOnAction(ActionEvent event) throws IOException {
         Stage stage=new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../resources/view/RoomSaveForm.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/RoomSaveForm.fxml"))));
         stage.setTitle("ROOMS");
         stage.centerOnScreen();
         stage.show();

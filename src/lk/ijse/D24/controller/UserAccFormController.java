@@ -50,7 +50,7 @@ public class UserAccFormController  implements Initializable {
                         email
                 ));
                 new Alert (Alert.AlertType.CONFIRMATION, "User created successfully").show ();
-                SendMail.outMail ("YOU ARE USER IN D24HOSTEL SYSTEM",email,"D24HOSTEL");
+                SendMail.outMail (" WELCOME TO D24 HOSTEL. NOW YOU ARE USER IN D24HOSTEL SYSTEM",email,"D24HOSTEL");
                 Stage stage4 = (Stage) anchorPane.getScene().getWindow();
                 stage4.close();
             }
