@@ -10,12 +10,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.D24.bo.BOFactory;
 import lk.ijse.D24.bo.custom.UserBO;
+import lk.ijse.D24.config.SendMail;
 import lk.ijse.D24.config.SessionFactoryConfig;
 import lk.ijse.D24.dto.UserDTO;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import javax.mail.MessagingException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
@@ -30,10 +32,10 @@ public class UserAccFormController  implements Initializable {
     public Label lblID;
     public AnchorPane anchorPane;
     private UserBO userBO = (UserBO) BOFactory.getBO(BOFactory.BOTypes.USER);
-    private Object SendMail;
 
-    public void btnCreateOnAction(ActionEvent event) {
-        int userID= Integer.parseInt(lblID.getText());
+
+    public void btnCreateOnAction(ActionEvent event) throws MessagingException {
+        int userID= 0;
         String UserName=txtUsername.getText();
         String password=txtPassword.getText();
         String rePassword=txtConfirmPassword.getText();
@@ -48,7 +50,7 @@ public class UserAccFormController  implements Initializable {
                         email
                 ));
                 new Alert (Alert.AlertType.CONFIRMATION, "User created successfully").show ();
-//                SendMail.outMail ("YOU ARE USER IN D24HOSTEL SYSTEM",email,"D24HOSTEL");
+                SendMail.outMail ("YOU ARE USER IN D24HOSTEL SYSTEM",email,"D24HOSTEL");
                 Stage stage4 = (Stage) anchorPane.getScene().getWindow();
                 stage4.close();
             }
@@ -75,30 +77,31 @@ public class UserAccFormController  implements Initializable {
     }
 
     private void setUserID() {
-        int userID=nextID();
-        lblID.setText(String.valueOf(userID));
+//        int userID=nextID();
+//        lblID.setText(String.valueOf(userID));
     }
 
-    private int nextID() {
-        Session session = SessionFactoryConfig.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
-
-        Query query = session.createQuery("select id from User order by id desc");
-
-        int nextID = 1;
-
-        if (query.list().size() == 0) {
-            return nextID;
-        } else {
-            int id = 0;
-            for (int i = 0; i < query.list().size(); i++) {
-                id = (int) query.list().get(id);
-            }
-            transaction.commit();
-            session.close();
-            return id;
-        }
-    }
+//    private int nextID() {
+//        Session session = SessionFactoryConfig.getInstance().getSession();
+//        Transaction transaction = session.beginTransaction();
+//
+//        Query query = session.createQuery("select id from User order by id desc");
+//
+//        int nextID = 1;
+//
+//        if (query.list().size() == 0) {
+//            return nextID;
+//        } else {
+//            int id = 0;
+//            for (int i = 0; i < query.list().size(); i++) {
+//                id = (int) query.list().get(id);
+//            }
+//            transaction.commit();
+//            session.close();
+//            return id;
+//        }
+//
+//    }
 
 
 }

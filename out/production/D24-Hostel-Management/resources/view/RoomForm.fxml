@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane2" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24.controller.RoomFormController">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="1050.0">
+         <image>
+            <Image url="@../img/pexels-ketut-subiyanto-4907430.jpg" />
+         </image>
+      </ImageView>
+      <ScrollPane layoutX="220.0" layoutY="180.0" prefHeight="439.0" prefWidth="776.0">
+         <content>
+            <TableView fx:id="tblRoom" onMouseClicked="#onMouseClicked" prefHeight="440.0" prefWidth="762.0">
+               <columns>
+                  <TableColumn fx:id="colID" prefWidth="145.0" text="Room_ID" />
+                  <TableColumn fx:id="colType" prefWidth="210.0" text="Type" />
+                  <TableColumn fx:id="colMoney" prefWidth="231.0" text="Key_Money" />
+                  <TableColumn fx:id="colQuantity" prefWidth="175.0" text="Quantity" />
+               </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <Button fx:id="btnSave" layoutX="41.0" layoutY="180.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #34495e;" text="SAVE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="41.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #34495e;" text="DELETE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnUpdate" layoutX="41.0" layoutY="293.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #34495e;" text="UPDATE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="28.0" prefWidth="96.0" style="-fx-background-color: #34495e;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
