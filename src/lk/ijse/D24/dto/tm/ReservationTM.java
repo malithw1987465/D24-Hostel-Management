@@ -1,10 +1,6 @@
 package lk.ijse.D24.dto.tm;
 
-import lk.ijse.D24.dto.RoomDTO;
-import lk.ijse.D24.dto.StudentDTO;
-
 import java.sql.Date;
-import java.sql.Timestamp;
 
 public class ReservationTM {
 

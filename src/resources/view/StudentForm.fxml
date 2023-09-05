@@ -32,22 +32,22 @@
             </TableView>
          </content>
       </ScrollPane>
-      <Button fx:id="btnSave" layoutX="41.0" layoutY="180.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #880e4f;" text="SAVE" textFill="WHITE">
+      <Button fx:id="btnSave" layoutX="41.0" layoutY="180.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #34495e;" text="SAVE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnDelete" layoutX="41.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #880e4f;" text="DELETE" textFill="WHITE">
+      <Button fx:id="btnDelete" layoutX="41.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #34495e;" text="DELETE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnUpdate" layoutX="41.0" layoutY="293.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #880e4f;" text="UPDATE" textFill="WHITE">
+      <Button fx:id="btnUpdate" layoutX="41.0" layoutY="293.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #34495e;" text="UPDATE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnBack" layoutX="31.0" layoutY="51.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="28.0" prefWidth="96.0" style="-fx-background-color: #880e4f;" text="Back" textFill="WHITE">
+      <Button fx:id="btnBack" layoutX="31.0" layoutY="51.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="28.0" prefWidth="96.0" style="-fx-background-color: #34495e;" text="Back" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

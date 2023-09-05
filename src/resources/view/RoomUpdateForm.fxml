@@ -41,12 +41,12 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnUpdate" layoutX="360.0" layoutY="480.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="110.0" style="-fx-background-color: #880e4f;" text="UPDATE" textFill="WHITE">
+      <Button fx:id="btnUpdate" layoutX="360.0" layoutY="480.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="110.0" style="-fx-background-color: #34495e;" text="UPDATE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnBack" layoutX="236.0" layoutY="480.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="27.0" prefWidth="110.0" style="-fx-background-color: #880e4f;" text="BACK" textFill="WHITE">
+      <Button fx:id="btnBack" layoutX="236.0" layoutY="480.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="27.0" prefWidth="110.0" style="-fx-background-color: #34495e;" text="BACK" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
