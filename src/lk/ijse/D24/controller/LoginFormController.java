@@ -2,7 +2,6 @@ package lk.ijse.D24.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -15,11 +14,9 @@ import lk.ijse.D24.bo.custom.UserBO;
 import lk.ijse.D24.dto.UserDTO;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
 
-public class LoginFormController implements Initializable {
+public class LoginFormController  {
     public AnchorPane root;
     public AnchorPane anchorPane;
     public TextField username;
@@ -69,10 +66,5 @@ public class LoginFormController implements Initializable {
         stage.setTitle("CreateAcc");
         stage.centerOnScreen();
         stage.show();
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 }

@@ -3,6 +3,7 @@ package lk.ijse.D24.controller;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,20 +11,31 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.ijse.D24.bo.BOFactory;
+import lk.ijse.D24.bo.custom.ReservationBO;
+import lk.ijse.D24.bo.custom.RoomBO;
+import lk.ijse.D24.bo.custom.StudentBO;
 //import lk.ijse.D24.util.Navigation;
 //import lk.ijse.D24.util.Routes;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class MainFormController {
+public class MainFormController implements Initializable {
 
-    public Button settingId;
-    public Button stManageId;
-    public Button dashboardId;
-    public Button roomId;
-    public Button resId;
+    public Label lblStudents;
+    public Label lblRooms;
+    public Label lblReservations;
     public AnchorPane anchorPane;
     public AnchorPane root;
+
+    RoomBO roomBO = (RoomBO) BOFactory.getBO (BOFactory.BOTypes.ROOM);
+    StudentBO studentBO = (StudentBO) BOFactory.getBO (BOFactory.BOTypes.STUDENT);
+    ReservationBO reservationBO = (ReservationBO) BOFactory.getBO (BOFactory.BOTypes.RESERVATION);
+
+
 
 
 
@@ -83,5 +95,11 @@ public class MainFormController {
         stage.setTitle("Student");
         stage.centerOnScreen();
         stage.show();
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        lblStudents.setText (String.valueOf (studentBO.loadAll ().size ()));
+        lblRooms.setText(String.valueOf(roomBO.loadAll().size()));
+        lblReservations.setText(String.valueOf(reservationBO.loadAll().size()));
     }
 }
