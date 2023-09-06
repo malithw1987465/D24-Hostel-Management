@@ -1,9 +1,6 @@
 package lk.ijse.D24.dao;
 
-import lk.ijse.D24.dao.custom.impl.ReservationDAOImpl;
-import lk.ijse.D24.dao.custom.impl.RoomDAOImpl;
-import lk.ijse.D24.dao.custom.impl.StudentDAOImpl;
-import lk.ijse.D24.dao.custom.impl.UserDAOImpl;
+import lk.ijse.D24.dao.custom.impl.*;
 
 
 public class DAOFactory {
@@ -20,7 +17,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes{
-        STUDENT,ROOM,USER,RESERVATION
+        STUDENT,ROOM,USER,RESERVATION,QUERY
     }
     public SuperDAO getDAO(DAOTypes daoTypes){
         switch (daoTypes){
@@ -32,6 +29,8 @@ public class DAOFactory {
                 return new ReservationDAOImpl();
             case USER:
                 return new UserDAOImpl();
+            case QUERY:
+                return new QueryDAOImpl();
             default:
                 return null;
         }

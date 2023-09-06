@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.D24.controller.ReportsFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="anchorPane" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24.controller.ReportsFormController">
+    <children>
+      <ImageView fitHeight="651.0" fitWidth="1053.0">
+         <image>
+            <Image url="@../img/Andra2483-Andra-Queen-Queen.jpg" />
+         </image>
+      </ImageView>
+        <ScrollPane layoutX="220.0" layoutY="180.0" prefHeight="439.0" prefWidth="776.0">
+            <content>
+                <TableView fx:id="tblData" onMouseClicked="#onMouseClicked" prefHeight="440.0" prefWidth="762.0">
+                    <columns>
+                        <TableColumn fx:id="colStID" prefWidth="113.0" text="Student_ID" />
+                        <TableColumn fx:id="colName" prefWidth="144.0" text="Student_Name" />
+                        <TableColumn fx:id="colNIC" prefWidth="131.0" text="NIC" />
+                        <TableColumn fx:id="colAddress" prefWidth="126.0" text="Address" />
+                        <TableColumn fx:id="colEmail" prefWidth="139.0" text="Email" />
+                        <TableColumn fx:id="colContact" prefWidth="108.0" text="Contact" />
+                    </columns>
+                </TableView>
+            </content>
+        </ScrollPane>
+        <Button fx:id="btnSave" layoutX="41.0" layoutY="180.0" mnemonicParsing="false" onAction="#btnFullOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #95a5a6;" text="Fully Paid" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnDelete" layoutX="41.0" layoutY="399.0" mnemonicParsing="false" onAction="#btnNotOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #95a5a6;" text="Not Paid" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnUpdate" layoutX="41.0" layoutY="293.0" mnemonicParsing="false" onAction="#btnPaidOnAction" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #95a5a6;" text="Paid" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="28.0" prefWidth="96.0" style="-fx-background-color: #95a5a6;" text="Back" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

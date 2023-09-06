@@ -78,7 +78,7 @@ public class MainFormController {
 
     public void btnOnActionReports(ActionEvent event) throws IOException {
         Stage stage=new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/PlansForm.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/Reports.fxml"))));
         stage.setTitle("Student");
         stage.centerOnScreen();
         stage.show();
