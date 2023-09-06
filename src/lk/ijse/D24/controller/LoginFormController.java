@@ -21,6 +21,7 @@ import java.util.ResourceBundle;
 
 public class LoginFormController implements Initializable {
     public AnchorPane root;
+    public AnchorPane anchorPane;
     public TextField username;
     public TextField txtpassword;
     public Button btnSignin;
@@ -56,7 +57,7 @@ public class LoginFormController implements Initializable {
 
     public void fogotpasswordOnAction(MouseEvent mouseEvent) throws IOException {
         Stage stage=new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/fogotPassword.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/ForgotPasswordForm.fxml"))));
         stage.setTitle("CreateAcc");
         stage.centerOnScreen();
         stage.show();

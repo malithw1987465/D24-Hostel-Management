@@ -54,7 +54,12 @@ public class RoomFormController implements Initializable {
         tblRoom.getSelectionModel().clearSelection();
     }
 
-    public void btnUpdateOnAction(ActionEvent event) {
+    public void btnUpdateOnAction(ActionEvent event) throws IOException {
+        Stage stage=new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/RoomUpdateForm.fxml"))));
+        stage.setTitle("ROOMS");
+        stage.centerOnScreen();
+        stage.show();
     }
 
     public void btnBackOnAction(ActionEvent event) throws IOException {

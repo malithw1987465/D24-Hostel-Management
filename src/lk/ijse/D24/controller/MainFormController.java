@@ -65,12 +65,22 @@ public class MainFormController {
 
     }
 
-    public void btnOnActionSetting(ActionEvent actionEvent) throws IOException {
 
+
+    public void btnOnActionPlans(ActionEvent event) throws IOException {
+        Stage stage=new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/PlansForm.fxml"))));
+        stage.setTitle("Student");
+        stage.centerOnScreen();
+        stage.show();
     }
 
-    public void btnOnActionPlans(ActionEvent event) {
+
+    public void btnOnActionReports(ActionEvent event) throws IOException {
+        Stage stage=new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/PlansForm.fxml"))));
+        stage.setTitle("Student");
+        stage.centerOnScreen();
+        stage.show();
     }
-
-
 }
