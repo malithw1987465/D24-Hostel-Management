@@ -16,7 +16,7 @@
       </ImageView>
       <AnchorPane layoutX="14.0" layoutY="8.0" prefHeight="647.0" prefWidth="242.0" style="-fx-background-color: #8e44ad; -fx-background-radius: 30;">
          <children>
-            <Button layoutX="99.0" layoutY="575.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="115.0" style="-fx-border-radius: 20; -fx-background-color: #f1c40f;" text="Log Out" />
+            <Button fx:id="btnLogOut" layoutX="99.0" layoutY="575.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="31.0" prefWidth="115.0" style="-fx-border-radius: 20; -fx-background-color: #f1c40f;" text="Log Out" />
             <Button fx:id="btnroomId" layoutX="87.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnOnActionRoom" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0c2461; -fx-background-radius: 20;" text="Rooms" textFill="WHITE">
                <font>
                   <Font size="21.0" />

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="559.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.D24.controller.EnterScreenController">
+   <children>
+      <ProgressIndicator fx:id="ProgressRange" layoutX="581.0" layoutY="328.0" progress="0.0" />
+      <ImageView fitHeight="567.0" fitWidth="807.0" layoutX="-3.0" layoutY="-4.0">
+         <image>
+            <Image url="@../img/818.jpg" />
+         </image>
+      </ImageView>
+      <ProgressBar fx:id="progressBar" layoutX="176.0" layoutY="456.0" prefHeight="18.0" prefWidth="471.0" progress="0.0" />
+      <Label layoutX="204.0" layoutY="516.0" prefHeight="17.0" prefWidth="387.0" text="Copyright © 2023  Hostel Management System. All Right Reserved." textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="564.0" layoutY="14.0" prefHeight="45.0" prefWidth="207.0" text="D24-HOSTEL" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

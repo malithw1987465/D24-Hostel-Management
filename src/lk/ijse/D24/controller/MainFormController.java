@@ -23,15 +23,16 @@ public class MainFormController {
     public Button roomId;
     public Button resId;
     public AnchorPane anchorPane;
+    public AnchorPane root;
 
 
 
-    public void onActionLogOut(ActionEvent actionEvent) throws IOException {
-       /* FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/lk/ijse/hostel/view/LoginForm.fxml"));
-        Parent parent=fxmlLoader.load();
-        Stage stage=new Stage();
-        stage.setScene(new Scene (parent));
-        stage.show();*/
+    public void btnLogoutOnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) root.getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/LoginForm.fxml"))));
+        stage.setTitle("MainForm");
+        stage.centerOnScreen();
+        stage.show();
 
 
     }
