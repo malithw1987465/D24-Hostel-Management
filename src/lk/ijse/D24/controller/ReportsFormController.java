@@ -148,9 +148,9 @@ public class ReportsFormController {
     }
 
     public void btnBackOnAction(ActionEvent event) throws IOException {
-        Stage stage = (Stage) anchorPane.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/DashboardForm.fxml"))));
-        stage.setTitle("DASHBOARD");
+        Stage stage=new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/resources/view/MainForm.fxml"))));
+        stage.setTitle("MainForm");
         stage.centerOnScreen();
         stage.show();
     }
