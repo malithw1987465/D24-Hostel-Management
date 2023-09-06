@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -25,11 +26,12 @@ import java.util.ResourceBundle;
 
 public class MainFormController implements Initializable {
 
+
+    public AnchorPane anchorPane;
+    public AnchorPane root;
     public Label lblStudents;
     public Label lblRooms;
     public Label lblReservations;
-    public AnchorPane anchorPane;
-    public AnchorPane root;
 
     RoomBO roomBO = (RoomBO) BOFactory.getBO (BOFactory.BOTypes.ROOM);
     StudentBO studentBO = (StudentBO) BOFactory.getBO (BOFactory.BOTypes.STUDENT);
