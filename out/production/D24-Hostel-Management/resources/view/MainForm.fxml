@@ -128,8 +128,17 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="lblStudents" layoutX="368.0" layoutY="358.0" prefHeight="78.0" prefWidth="74.0" />
-      <Label fx:id="lblRooms" layoutX="593.0" layoutY="358.0" prefHeight="78.0" prefWidth="74.0" />
-      <Label fx:id="lblReservations" layoutX="834.0" layoutY="358.0" prefHeight="78.0" prefWidth="74.0" />
+      <Label fx:id="lblStudents" layoutX="376.0" layoutY="358.0" prefHeight="78.0" prefWidth="74.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <Label fx:id="lblRooms" layoutX="614.0" layoutY="358.0" prefHeight="78.0" prefWidth="74.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <Label fx:id="lblReservations" layoutX="864.0" layoutY="358.0" prefHeight="78.0" prefWidth="74.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
    </children>
 </AnchorPane>

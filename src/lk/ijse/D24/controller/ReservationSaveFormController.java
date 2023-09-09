@@ -31,6 +31,7 @@ public class ReservationSaveFormController implements Initializable {
     public Button btnSave;
     public AnchorPane anchorPane;
     public DatePicker date;
+    public Label lblKeyMoney;
 
     private ReservationBO reservationBO = (ReservationBO) BOFactory.getBO (BOFactory.BOTypes.RESERVATION);
 
@@ -41,6 +42,8 @@ public class ReservationSaveFormController implements Initializable {
         String status = cmbStatus.getValue ().toString ();
         double advance= Double.parseDouble(txtAdvance.getText());
         Date dateTime= Date.valueOf(date.getValue());
+        RoomDTO room = getRoomDetail ();
+        if (room.getQuantity()>0){
         boolean isSaveReservation = reservationBO.saveReservation (
                 new ReservationDTO(
                         id,
@@ -52,13 +55,16 @@ public class ReservationSaveFormController implements Initializable {
                 ));
         if (isSaveReservation) {
             new Alert(Alert.AlertType.CONFIRMATION, "Saved Successfully").show();
-            RoomDTO room = getRoomDetail ();
 
-            System.out.println (room.getQuantity() - 1);
+
+            System.out.println(room.getQuantity() - 1);
             room.setQuantity(room.getQuantity() - 1);
-            reservationBO.updateRoom (room);
+            reservationBO.updateRoom(room);
             // tblReservation.getItems ().clear ();
-            loadAllReservations ();
+            loadAllReservations();
+        }else{
+            new Alert(Alert.AlertType.ERROR,"NO Rooms Available");
+        }
         }
     }
 
@@ -114,7 +120,12 @@ public class ReservationSaveFormController implements Initializable {
     public void cmbRoomOnAction(ActionEvent event) {
         int room_id = (int) cmbRoom.getValue();
         RoomDTO dto = reservationBO.getRoom(room_id);
-        lblType.setText (dto.getType());
+        if(dto.getQuantity()>0){
+
+            lblType.setText (dto.getType());
+            lblKeyMoney.setText(String.valueOf(dto.getKey_money()));
+        }
+
     }
 
     @Override

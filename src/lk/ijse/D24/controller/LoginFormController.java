@@ -18,9 +18,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class LoginFormController  {
-    public Label lblStudents;
-    public Label lblRooms;
-    public Label lblReservations;
     public AnchorPane root;
     public AnchorPane anchorPane;
     public TextField username;

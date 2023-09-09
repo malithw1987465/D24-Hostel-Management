@@ -30,6 +30,7 @@ public class ReservationUpdateFormController implements Initializable {
     public ComboBox cmbStatus;
     public DatePicker date;
     public ComboBox cmbReservation;
+    public Label lblKeyMoney;
 
     private ReservationBO reservationBO = (ReservationBO) BOFactory.getBO (BOFactory.BOTypes.RESERVATION);
 
@@ -91,6 +92,7 @@ public class ReservationUpdateFormController implements Initializable {
         int roomId = (int) cmbRoom.getValue ();
         RoomDTO dto = reservationBO.getRoom (roomId);
         lblType.setText (dto.getType ());
+        lblKeyMoney.setText(String.valueOf(dto.getKey_money()));
     }
 
     public void cmbReservationOnAction(ActionEvent event) {

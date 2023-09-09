@@ -29,7 +29,6 @@ public class RoomFormController implements Initializable {
     public TableColumn colType;
     public TableColumn colMoney;
     public TableColumn colQuantity;
-    public AnchorPane anchorPane;
     public AnchorPane root;
 
     private RoomBO roomBO = (RoomBO) BOFactory.getBO (BOFactory.BOTypes.ROOM);
